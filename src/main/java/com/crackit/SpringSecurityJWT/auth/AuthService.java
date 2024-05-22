@@ -38,7 +38,7 @@ public class AuthService {
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
     	try {
         	
-            authenticationManager.authenticate(
+   authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
             );
             User user = userRepository.findByEmail(request.getEmail())
@@ -56,10 +56,7 @@ public class AuthService {
     private Set<GrantedAuthority> getAuthorities(User user) {
         Set<GrantedAuthority> authorities = new HashSet<>();
         try {
-            if (user == null) {
-                System.out.println("User object is null.");
-                return authorities;
-            }
+      
             Set<Department> departments = user.getDepartments();
             if (departments != null) {
                 Set<Role> rolesAndAuthorities = roleService.getRolesAndAuthoritiesByDepartments(departments);
