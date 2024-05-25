@@ -30,7 +30,7 @@ public class MemberController {
 	        return "Secured Endpoint :: put - MEMBER controller";
 	    }
 	   
-	   @DeleteMapping("/deleteall")
+	   @DeleteMapping("/deleteAll")
 	    public String delete() {
 	    	System.out.println("Admin read triggered");
 	        return "Secured Endpoint :: delete - MEMBER controller";
