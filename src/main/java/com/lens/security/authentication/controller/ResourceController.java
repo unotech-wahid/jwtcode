@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/test")
-public class TestController {
+public class ResourceController {
 
    @GetMapping("/get")
    @PreAuthorize("hasAuthority('READ_USER')")
