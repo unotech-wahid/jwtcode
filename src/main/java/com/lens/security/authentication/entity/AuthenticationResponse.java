@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthenticationResponse {
+	
 	@JsonProperty("access_token")
 	private String accessToken;
 	private String errorMessage;

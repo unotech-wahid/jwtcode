@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.config;
+package com.lens.security.authentication.config;
 
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;

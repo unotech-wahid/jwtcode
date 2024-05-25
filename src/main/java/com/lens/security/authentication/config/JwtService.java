@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.config;
+package com.lens.security.authentication.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

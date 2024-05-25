@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.config;
+package com.lens.security.authentication.config;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -17,10 +17,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.crackit.SpringSecurityJWT.auth.CustomUserDetails;
-import com.crackit.SpringSecurityJWT.auth.RoleService;
-import com.crackit.SpringSecurityJWT.user.User;
-import com.crackit.SpringSecurityJWT.user.repository.UserRepository;
+import com.lens.security.authentication.CustomUserDetails;
+import com.lens.security.authentication.entity.User;
+import com.lens.security.authentication.repository.UserRepository;
+import com.lens.security.authentication.service.RoleService;
 
 @Configuration
 public class ApplicationConfig {

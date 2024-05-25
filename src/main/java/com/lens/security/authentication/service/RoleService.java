@@ -1,12 +1,13 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication.service;
 
 import java.util.HashSet;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.crackit.SpringSecurityJWT.user.Department;
-import com.crackit.SpringSecurityJWT.user.Role;
-import com.crackit.SpringSecurityJWT.user.repository.RoleRepository;
+
+import com.lens.security.authentication.entity.Department;
+import com.lens.security.authentication.entity.Role;
+import com.lens.security.authentication.repository.RoleRepository;
 
 @Service
 public class RoleService {

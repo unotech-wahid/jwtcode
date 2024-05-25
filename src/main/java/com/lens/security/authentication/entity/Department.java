@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.user;
+package com.lens.security.authentication.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -25,7 +25,6 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "department_id") 
     private Long id;
-
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

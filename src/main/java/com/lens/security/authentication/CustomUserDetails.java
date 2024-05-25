@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication;
 
 import java.util.Collection;
 import java.util.Set;
@@ -6,7 +6,7 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.crackit.SpringSecurityJWT.user.User;
+import com.lens.security.authentication.entity.User;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

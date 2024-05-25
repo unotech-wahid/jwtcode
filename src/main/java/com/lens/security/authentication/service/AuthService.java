@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,12 +12,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.crackit.SpringSecurityJWT.config.JwtService;
-import com.crackit.SpringSecurityJWT.user.Authority;
-import com.crackit.SpringSecurityJWT.user.Department;
-import com.crackit.SpringSecurityJWT.user.Role;
-import com.crackit.SpringSecurityJWT.user.User;
-import com.crackit.SpringSecurityJWT.user.repository.UserRepository;
+import com.lens.security.authentication.CustomUserDetails;
+import com.lens.security.authentication.config.JwtService;
+import com.lens.security.authentication.entity.AuthenticationRequest;
+import com.lens.security.authentication.entity.AuthenticationResponse;
+import com.lens.security.authentication.entity.Authority;
+import com.lens.security.authentication.entity.Department;
+import com.lens.security.authentication.entity.Role;
+import com.lens.security.authentication.entity.User;
+import com.lens.security.authentication.repository.UserRepository;
 
 @Service
 public class AuthService {

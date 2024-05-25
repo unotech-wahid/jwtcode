@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.config;
+package com.lens.security.authentication.config;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
