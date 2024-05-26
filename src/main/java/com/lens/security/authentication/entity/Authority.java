@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.user;
+package com.lens.security.authentication.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.user;
+package com.lens.security.authentication.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,7 +33,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long id;
-
     private String name;
     private String email;
     private String password;

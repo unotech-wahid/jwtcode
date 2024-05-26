@@ -1,13 +1,13 @@
-package com.crackit.SpringSecurityJWT.user.repository;
-
-import com.crackit.SpringSecurityJWT.user.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+package com.lens.security.authentication.repository;
 
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.lens.security.authentication.entity.User;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-	
-    Optional<User> findByEmail(String email);
+	Optional<User> findByEmail(String email);
 }

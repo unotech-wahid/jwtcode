@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthenticationRequest {
+	
   private String email;
   private String password;
 }

@@ -1,4 +1,4 @@
-package com.crackit.SpringSecurityJWT.auth;
+package com.lens.security.authentication;
 
 import java.util.Collection;
 import java.util.Set;
@@ -6,15 +6,21 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.crackit.SpringSecurityJWT.user.User;
+import com.lens.security.authentication.entity.User;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustomUserDetails implements UserDetails {
 
-    private final User user;
-    private final Set<GrantedAuthority> authorities;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 106599748567190352L;
+	private User user;
+    private Set<GrantedAuthority> authorities;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
