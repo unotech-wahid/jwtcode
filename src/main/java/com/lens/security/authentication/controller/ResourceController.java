@@ -15,24 +15,24 @@ public class ResourceController {
    @GetMapping("/get")
    @PreAuthorize("hasAuthority('READ_USER')")
     public String get() {
-    	System.out.println("Resorce read triggered");
+    	System.out.println("Resource read triggered");
         return "Secured Endpoint :: GET - Test controller"; 
     }
 
    @PostMapping("/post")
    @PreAuthorize("hasAuthority('CREATE_USER')")
     public String post() {
-    	System.out.println("Resorce read triggered");
+    	System.out.println("Resource read triggered");
         return "Secured Endpoint :: post - Test controller";
     }
     
    @PutMapping("/put")
    @PreAuthorize("hasAuthority('UPDATE_USER')")
     public String put() {
-    	System.out.println("Resorce read triggered");
+    	System.out.println("Resource read triggered");
         return "Secured Endpoint :: put - Test controller";
     }
-   
+
    @DeleteMapping("/delete")
    @PreAuthorize("hasAuthority('DELETE_USER')")
     public String delete() {
