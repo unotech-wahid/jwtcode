@@ -30,7 +30,7 @@ import lombok.ToString;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
     private String name;
@@ -43,9 +43,6 @@ public class User {
         joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     )
-    private Set<Department> departments = new HashSet<>();
-    
-    
-    
+    private Set<Department> departments = new HashSet<>();    
     
 }

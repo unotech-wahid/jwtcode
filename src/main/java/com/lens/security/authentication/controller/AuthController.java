@@ -16,11 +16,8 @@ import com.lens.security.authentication.repository.AuthorityRepository;
 import com.lens.security.authentication.repository.RoleRepository;
 import com.lens.security.authentication.service.AuthService;
 
-import lombok.RequiredArgsConstructor;
-
 @RestController
 @RequestMapping("/api/v1/auth")
-@RequiredArgsConstructor
 public class AuthController {
 
 	@Autowired
