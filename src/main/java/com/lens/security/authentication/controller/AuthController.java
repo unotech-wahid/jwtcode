@@ -28,7 +28,7 @@ public class AuthController {
 	private RoleRepository roleRepository;
 
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody User user) {
+	public ResponseEntity<?> register(@RequestBody User user) throws Exception {
 		String authResponse = authService.register(user);
 		return ResponseEntity.ok(authResponse);
 	}

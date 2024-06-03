@@ -1,8 +1,9 @@
 package com.lens.security.authentication.service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
-
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -11,7 +12,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import org.springframework.util.ObjectUtils;
 import com.lens.security.authentication.CustomUserDetails;
 import com.lens.security.authentication.config.JwtService;
 import com.lens.security.authentication.entity.AuthenticationRequest;
@@ -20,6 +21,7 @@ import com.lens.security.authentication.entity.Authority;
 import com.lens.security.authentication.entity.Department;
 import com.lens.security.authentication.entity.Role;
 import com.lens.security.authentication.entity.User;
+import com.lens.security.authentication.repository.DepartmentRepository;
 import com.lens.security.authentication.repository.UserRepository;
 
 @Service
@@ -35,9 +37,22 @@ public class AuthService {
 	private AuthenticationManager authenticationManager;
 	@Autowired
 	private RoleService roleService;
-
-	public String register(User user) {
+	@Autowired
+	private DepartmentRepository departmentRepository;
+	
+	public String register(User user) throws Exception {
+		Optional<User> userPersist = userRepository.findByEmail(user.getEmail());
+		if (userPersist.isEmpty()) {
+			throw new Exception("user email id already exist.");
+		}
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		Set<String> departmentName = user.getDepartments().stream().map(Department::getName)
+				.collect(Collectors.toSet());
+		Set<Department> departments = departmentRepository.findBynameIn(departmentName);
+		if (ObjectUtils.isEmpty(departments)) {
+			throw new Exception("No Department Fount.");
+		}
+		user.setDepartments(departments);
 		userRepository.save(user);
 		return "User created successfully";
 	}
